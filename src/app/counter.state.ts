@@ -6,30 +6,20 @@ export interface CounterStateModel {
   value: number;
 }
 
-@State<CounterStateModel>({
+@State<number>({
   name: 'counter',
-  defaults: {
-    value: 0
-  }
+  defaults: 0
 })
 @Injectable()
 export class CounterState {
 
   @Action(IncreaseCounter)
-  increaseCounter(ctx: StateContext<CounterStateModel>) {
-    const state = ctx.getState();
-    ctx.setState({
-      ...state,
-      value: state.value + 1
-    })
+  increaseCounter(ctx: StateContext<number>) {
+    ctx.setState((state) => state + 1)
   }
 
   @Action(DecreaseCounter)
-  decreaseCounter(ctx: StateContext<CounterStateModel>) {
-    const state = ctx.getState();
-    ctx.setState({
-      ...state,
-      value: state.value - 1
-    })
+  decreaseCounter(ctx: StateContext<number>) {
+    ctx.setState((state) => state - 1)
   }
 }
