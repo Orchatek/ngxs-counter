@@ -1,5 +1,15 @@
 <div class="screen-center">
-  <button class="btn-primary-ghost" pButton>
-    Click Me
-  </button>
+  <div>
+    <h1 class="text-center">
+      {{counter$ | async | json}}
+    </h1>
+    <button class="btn-primary-ghost" pButton (click)="increaseCounter()">
+      Increase
+    </button>
+    <button class="ml-2 btn-primary-ghost" pButton (click)="decreaseCounter()">
+      Decrease
+    </button>
+  </div>
 </div>
+
+

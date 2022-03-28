@@ -7,6 +7,7 @@ import {ButtonModule} from "primeng/button";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {NgxsModule} from "@ngxs/store";
 import {environment} from "../environments/environment";
+import {CounterState} from "./counter.state";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,9 @@ import {environment} from "../environments/environment";
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    NgxsModule.forRoot([], {
+    NgxsModule.forRoot([
+      CounterState
+    ], {
       developmentMode: !environment.production
     }),
     ButtonModule

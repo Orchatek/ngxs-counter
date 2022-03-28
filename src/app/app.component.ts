@@ -1,22 +1,29 @@
 import {Component} from '@angular/core';
 import {Store} from "@ngxs/store";
-import {Animal} from "./animal.actions";
-import Add = Animal.Add;
+import {Observable} from "rxjs";
+import {DecreaseCounter, IncreaseCounter} from "./counter.actions";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  providers: []
 })
 export class AppComponent {
-  // @Select(state => state.animals) animals$: Observable<any> | undefined;
+
+  counter$: Observable<any> | undefined;
 
   constructor(
-    private store: Store
+    public store: Store
   ) {
+    this.counter$ = this.store.select(state => state.counter.value);
   }
 
-  addAnimal(name: string) {
-    this.store.dispatch(new Add(name));
+  decreaseCounter() {
+    this.store.dispatch(new DecreaseCounter())
+  }
+
+  increaseCounter() {
+    this.store.dispatch(new IncreaseCounter())
   }
 }
