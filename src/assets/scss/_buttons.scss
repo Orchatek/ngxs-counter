@@ -1,0 +1,12 @@
+@use "bourbon/core/bourbon";
+@use "theme";
+@use "primeflex/primeflex" as pf;
+
+.btn-primary {
+  @include pf.styleclass('bg-primary border-none');
+  border-radius: var(--border-radius);
+
+  &:hover, &:focus {
+    @include pf.styleclass('bg-primary-reverse border-2 border-primary');
+  }
+}
