@@ -9,4 +9,13 @@
   &:hover, &:focus {
     @include pf.styleclass('bg-primary-reverse border-2 border-primary');
   }
+
+  &-ghost {
+    @include pf.styleclass('bg-primary-reverse border-2 border-primary');
+    border-radius: var(--border-radius);
+
+    &:hover, &:focus {
+      @include pf.styleclass('bg-primary border-none');
+    }
+  }
 }
