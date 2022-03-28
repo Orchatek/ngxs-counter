@@ -5,6 +5,7 @@
 .btn-primary {
   @include pf.styleclass('bg-primary border-none');
   border-radius: var(--border-radius);
+  //color: @
 
   &:hover, &:focus {
     @include pf.styleclass('bg-primary-reverse border-2 border-primary');
