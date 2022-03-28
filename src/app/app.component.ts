@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {Store} from "@ngxs/store";
+import {Animal} from "./animal.actions";
+import Add = Animal.Add;
 
 @Component({
   selector: 'app-root',
@@ -6,6 +9,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'learning-state-management-angular';
-  isClickable = true;
+  // @Select(state => state.animals) animals$: Observable<any> | undefined;
+
+  constructor(
+    private store: Store
+  ) {
+  }
+
+  addAnimal(name: string) {
+    this.store.dispatch(new Add(name));
+  }
 }
