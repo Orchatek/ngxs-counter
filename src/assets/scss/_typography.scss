@@ -1,0 +1,72 @@
+@use "bourbon/core/bourbon";
+@use "theme";
+
+%headings {
+  @include bourbon.margin(1.5rem 0 1rem 0);
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.2;
+  color: inherit;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+h1 {
+  @extend %headings;
+  font-size: theme.$font-size * 2.5;
+}
+
+h2 {
+  @extend %headings;
+  font-size: theme.$font-size * 2;
+}
+
+h3 {
+  @extend %headings;
+  font-size: theme.$font-size * 1.75;
+}
+
+h4 {
+  @extend %headings;
+  font-size: theme.$font-size * 1.5;
+}
+
+h5 {
+  @extend %headings;
+  font-size: theme.$font-size * 1.25;
+}
+
+h6 {
+  @extend %headings;
+  font-size: theme.$font-size;
+}
+
+mark {
+  background: #FFF8E1;
+  padding: .25rem .4rem;
+  border-radius: var(--border-radius);
+  font-family: monospace;
+}
+
+blockquote {
+  margin: 1rem 0;
+  padding: 0 2rem;
+  border-left: 4px solid #90A4AE;
+}
+
+hr {
+  border-top: solid var(--surface-border);
+  border-width: 1px 0 0 0;
+  margin: 1rem 0;
+}
+
+p {
+  margin: 0 0 1rem 0;
+  line-height: 1.5;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
