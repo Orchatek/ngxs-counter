@@ -1,0 +1,5 @@
+@use "primeflex/primeflex";
+
+.screen-center {
+  @include primeflex.styleclass('h-screen flex justify-content-center align-items-center');
+}
